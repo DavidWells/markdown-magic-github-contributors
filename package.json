@@ -1,6 +1,6 @@
 {
   "name": "markdown-magic-github-contributors",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Add github contributors to markdown file",
   "main": "index.js",
   "scripts": {
