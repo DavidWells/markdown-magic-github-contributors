@@ -7,7 +7,9 @@ This [markdown-magic](https://github.com/DavidWells/markdown-magic) will list ou
 - [Usage](#usage)
 - [Usage in markdown](#usage-in-markdown)
 - [Options](#options)
-  * [Usage with options](#usage-with-options)
+- [Setting options](#setting-options)
+  * [Global configuration](#global-configuration)
+  * [Inline configuration](#inline-configuration)
 - [Prior Art](#prior-art)
 <!-- ⛔️ AUTO-GENERATED-CONTENT:END -->
 
@@ -48,7 +50,12 @@ table will be placed here
 
 `format` *(string)* (optional) - Default is table. possible values: `list`, `aligned`, & `table`. [See example](https://github.com/jonschlinkert/github-contributors#formatted-list)
 
-### Usage with options
+## Setting options
+
+
+### Global configuration
+
+You can configure the plugin when required in as a tranform. This will apply to all instances of the `<!-- ⛔️ AUTO-GENERATED-CONTENT (CONTRIBUTORS) -->` comment, unless overriden inline.
 
 ```js
 const fs = require('fs')
@@ -66,6 +73,16 @@ const config = {
 
 const markdownPath = path.join(__dirname, 'README.md')
 markdownMagic(markdownPath, config)
+```
+
+### Inline configuration
+
+You can override global config settings with inline options like so:
+
+```md
+<!-- ⛔️ AUTO-GENERATED-CONTENT:START (CONTRIBUTORS:format=list) -->
+table will be placed here
+<!-- ⛔️ AUTO-GENERATED-CONTENT:END -->
 ```
 
 ## Prior Art
