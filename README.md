@@ -5,6 +5,7 @@ This [markdown-magic](https://github.com/DavidWells/markdown-magic) will list ou
 <!-- ⛔️ AUTO-GENERATED-CONTENT:START (TOC) -->
 - [Usage](#usage)
 - [Usage in markdown](#usage-in-markdown)
+- [Usage with options](#usage-with-options)
 - [Options](#options)
 - [Prior Art](#prior-art)
 <!-- ⛔️ AUTO-GENERATED-CONTENT:END -->
@@ -32,6 +33,26 @@ markdownMagic(markdownPath, config)
 <!-- ⛔️ AUTO-GENERATED-CONTENT:START (CONTRIBUTORS) -->
 table will be placed here
 <!-- ⛔️ AUTO-GENERATED-CONTENT:END -->
+```
+
+## Usage with options
+
+```js
+const fs = require('fs')
+const path = require('path')
+const markdownMagic = require('markdown-magic')
+
+const config = {
+  transforms: {
+    CONTRIBUTORS: require('markdown-magic-github-contributors')({
+      repo: 'userName/repoName', // specify different repo than cwd
+      format: 'list'
+    })
+  }
+}
+
+const markdownPath = path.join(__dirname, 'README.md')
+markdownMagic(markdownPath, config)
 ```
 
 ## Options
