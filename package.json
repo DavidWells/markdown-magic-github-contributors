@@ -4,6 +4,7 @@
   "description": "Add github contributors to markdown file",
   "main": "index.js",
   "scripts": {
+    "docs": "node build-docs.js",
     "publish": "git push origin && git push origin --tags",
     "release:patch": "npm version patch && npm publish",
     "release:minor": "npm version minor && npm publish",
@@ -17,5 +18,8 @@
     "github-contributors": "^0.4.0",
     "github-url-from-git": "^1.5.0",
     "remote-origin-url": "^0.5.2"
+  },
+  "devDependencies": {
+    "markdown-magic": "^0.1.4"
   }
 }

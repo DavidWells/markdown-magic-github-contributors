@@ -2,6 +2,13 @@
 
 This [markdown-magic](https://github.com/DavidWells/markdown-magic) will list out the contributors of your repository.
 
+<!-- ⛔️ AUTO-GENERATED-CONTENT:START (TOC) -->
+- [Usage](#usage)
+- [Usage in markdown](#usage-in-markdown)
+- [Options](#options)
+- [Prior Art](#prior-art)
+<!-- ⛔️ AUTO-GENERATED-CONTENT:END -->
+
 ## Usage
 
 ```js
