@@ -5,8 +5,8 @@ This [markdown-magic](https://github.com/DavidWells/markdown-magic) will list ou
 <!-- ⛔️ AUTO-GENERATED-CONTENT:START (TOC) -->
 - [Usage](#usage)
 - [Usage in markdown](#usage-in-markdown)
-- [Usage with options](#usage-with-options)
 - [Options](#options)
+  * [Usage with options](#usage-with-options)
 - [Prior Art](#prior-art)
 <!-- ⛔️ AUTO-GENERATED-CONTENT:END -->
 
