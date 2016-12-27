@@ -35,7 +35,13 @@ table will be placed here
 <!-- ⛔️ AUTO-GENERATED-CONTENT:END -->
 ```
 
-## Usage with options
+## Options
+
+`repo` *(string)* (optional) - `username/repoName`. Will use the current working directory git remote origin as a default.
+
+`format` *(string)* (optional) - Default is table. possible values: `list`, `aligned`, & `table`. [See example](https://github.com/jonschlinkert/github-contributors#formatted-list)
+
+### Usage with options
 
 ```js
 const fs = require('fs')
@@ -54,12 +60,6 @@ const config = {
 const markdownPath = path.join(__dirname, 'README.md')
 markdownMagic(markdownPath, config)
 ```
-
-## Options
-
-`repo` *(string)* (optional) - `username/repoName`. Will use the current working directory git remote origin as a default.
-
-`format` *(string)* (optional) - Default is table. possible values: `list`, `aligned`, & `table`. [See example](https://github.com/jonschlinkert/github-contributors#formatted-list)
 
 ## Prior Art
 
