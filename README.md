@@ -51,9 +51,11 @@ table will be placed here
 
 ### 3. Add docs build script to package.json
 
+This is an option step but will allow you to generate docs easily with `npm run docs`
+
 ```json
   "scripts": {
-    "docs": "node build-docs.js",
+    "docs": "node generate-docs.js",
   }
 ```
 
