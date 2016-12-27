@@ -65,7 +65,6 @@ const markdownMagic = require('markdown-magic')
 const config = {
   transforms: {
     CONTRIBUTORS: require('markdown-magic-github-contributors')({
-      repo: 'userName/repoName', // specify different repo than cwd
       format: 'list'
     })
   }
