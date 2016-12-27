@@ -5,8 +5,9 @@ This [markdown-magic](https://github.com/DavidWells/markdown-magic) will list ou
 <!-- ⛔️ AUTO-GENERATED-CONTENT:START (TOC) -->
 - [Install](#install)
 - [Usage](#usage)
-  * [Add markdown-magic transform script](#add-markdown-magic-transform-script)
-  * [Add comment block in markdown](#add-comment-block-in-markdown)
+  * [1. Add markdown-magic transform script](#1-add-markdown-magic-transform-script)
+  * [2. Add comment block in markdown](#2-add-comment-block-in-markdown)
+  * [3. Add docs build script to package.json](#3-add-docs-build-script-to-packagejson)
 - [Options](#options)
 - [Setting options](#setting-options)
   * [Global configuration](#global-configuration)
@@ -22,9 +23,10 @@ npm i markdown-magic markdown-magic-github-contributors --save-dev
 
 ## Usage
 
-### Add markdown-magic transform script
+### 1. Add markdown-magic transform script
 
 ```js
+/* generate-docs.js */
 const fs = require('fs')
 const path = require('path')
 const markdownMagic = require('markdown-magic')
@@ -39,12 +41,20 @@ const markdownPath = path.join(__dirname, 'README.md')
 markdownMagic(markdownPath, config)
 ```
 
-### Add comment block in markdown
+### 2. Add comment block in markdown
 
 ```md
 <!-- ⛔️ AUTO-GENERATED-CONTENT:START (CONTRIBUTORS) -->
 table will be placed here
 <!-- ⛔️ AUTO-GENERATED-CONTENT:END -->
+```
+
+### 3. Add docs build script to package.json
+
+```json
+  "scripts": {
+    "docs": "node build-docs.js",
+  }
 ```
 
 ## Options

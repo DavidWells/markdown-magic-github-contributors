@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "ava --verbose",
-    "docs": "node build-docs.js",
+    "docs": "node generate-docs.js",
     "publish": "git push origin && git push origin --tags",
     "release:patch": "npm version patch && npm publish",
     "release:minor": "npm version minor && npm publish",
