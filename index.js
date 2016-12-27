@@ -1,6 +1,5 @@
 const contributors = require('github-contributors')
 const merge = require('deepmerge')
-const deAsync = require('deasync')
 const gitRemoteUrl = require('remote-origin-url')
 const format = require('github-url-from-git')
 
@@ -8,10 +7,21 @@ const defaultOptions = {
   format: 'table',
 }
 
-module.exports = function(pluginOptions) {
+let globalOptions = {} // default
+
+module.exports = function(content, options, config) {
+
+  // args set in config transform
+  if (content && typeof content === 'object') {
+    // content is not string but a options for the plugin
+    globalOptions = content
+  }
+
   return function githubContibutors(content, options, config) {
-    const userOptions = pluginOptions || {}
-    let repo = userOptions.repo
+    const userOptions = options || {}
+    const mergedOptions = merge(globalOptions, userOptions)
+    // console.log('mergedOptions', mergedOptions)
+    let repo = mergedOptions.repo
     let contribs
 
     if(!repo) {
@@ -27,15 +37,17 @@ module.exports = function(pluginOptions) {
       defaultOptions.secret = process.env.CLIENT_SECRET
     }
 
-    const opts = merge(defaultOptions, userOptions)
+    const contributorsOpts = merge(defaultOptions, mergedOptions)
 
-    // Get repo contributors
-    contributors(repo, opts, function(err, res) {
+    // console.log('repo', repo)
+    // console.log('options', contributorsOpts)
+    // Get repo contributors sync
+    contributors(repo, contributorsOpts, function(err, res) {
       if (err) console.log(err);
       contribs = res
     });
     while(contribs === undefined) {
-      deAsync.runLoopOnce();
+      require('deasync').sleep(100);
     }
     return contribs;
   }

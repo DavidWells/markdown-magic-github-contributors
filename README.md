@@ -3,12 +3,19 @@
 This [markdown-magic](https://github.com/DavidWells/markdown-magic) will list out the contributors of your repository.
 
 <!-- ⛔️ AUTO-GENERATED-CONTENT:START (TOC) -->
+- [Install](#install)
 - [Usage](#usage)
 - [Usage in markdown](#usage-in-markdown)
 - [Options](#options)
   * [Usage with options](#usage-with-options)
 - [Prior Art](#prior-art)
 <!-- ⛔️ AUTO-GENERATED-CONTENT:END -->
+
+## Install
+
+```bash
+npm i markdown-magic markdown-magic-github-contributors --save-dev
+```
 
 ## Usage
 
