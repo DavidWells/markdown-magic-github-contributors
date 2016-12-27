@@ -5,7 +5,8 @@ This [markdown-magic](https://github.com/DavidWells/markdown-magic) will list ou
 <!-- ⛔️ AUTO-GENERATED-CONTENT:START (TOC) -->
 - [Install](#install)
 - [Usage](#usage)
-- [Usage in markdown](#usage-in-markdown)
+  * [Add markdown-magic transform script](#add-markdown-magic-transform-script)
+  * [Add comment block in markdown](#add-comment-block-in-markdown)
 - [Options](#options)
 - [Setting options](#setting-options)
   * [Global configuration](#global-configuration)
@@ -20,6 +21,8 @@ npm i markdown-magic markdown-magic-github-contributors --save-dev
 ```
 
 ## Usage
+
+### Add markdown-magic transform script
 
 ```js
 const fs = require('fs')
@@ -36,7 +39,7 @@ const markdownPath = path.join(__dirname, 'README.md')
 markdownMagic(markdownPath, config)
 ```
 
-## Usage in markdown
+### Add comment block in markdown
 
 ```md
 <!-- ⛔️ AUTO-GENERATED-CONTENT:START (CONTRIBUTORS) -->
